@@ -1,0 +1,30 @@
+name: blog_app
+version: 0.1.0
+
+authors:
+  - aarthikrao <aarthik.v@games24x7.com>
+
+targets:
+  crystal_app:
+    main: src/crystal_app.cr
+
+
+dependencies:
+  
+  kemal:
+    github: kemalcr/kemal
+
+  db:
+    github: crystal-lang/crystal-db
+  
+  mongo:
+    github: datanoise/mongo.cr
+    branch: master
+
+  bson:
+    github: jeromegn/bson.cr
+
+crystal: 0.24.2
+
+license: MIT
+

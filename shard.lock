@@ -1,0 +1,26 @@
+version: 1.0
+shards:
+  db:
+    github: crystal-lang/crystal-db
+    version: 0.5.0
+
+  kemal:
+    github: kemalcr/kemal
+    version: 0.23.0
+
+  kilt:
+    github: jeromegn/kilt
+    version: 0.4.0
+
+  mongo:
+    github: datanoise/mongo.cr
+    commit: 86c9e530c0ac980ed7b15e653746bc5b6f2527fc
+
+  mongo_orm:
+    github: sam0x17/mongo_orm
+    commit: 015ae29a29ca8b80a98a531de891095bbd42d028
+
+  radix:
+    github: luislavena/radix
+    version: 0.3.8
+
