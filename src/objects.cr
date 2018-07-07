@@ -3,9 +3,13 @@ require "json"
 
 def orm_json_author(author : Author)
   {
-    "name"   => author.name,
-    "age"    => author.age,
-    "author" => author.author,
+    "name"        => author.name,
+    "age"         => author.age,
+    "nickname"    => author.nickname,
+    "github"      => author.github,
+    "facebook"    => author.facebook,
+    "twitter"     => author.twitter,
+    "description" => author.description,
   }
 end
 
@@ -13,7 +17,11 @@ class Author
   JSON.mapping(
     name: String,
     age: {type: Int32, nilable: true},
-    author: String
+    nickname: String,
+    github: {type: String, nilable: true},
+    facebook: {type: String, nilable: true},
+    twitter: {type: String, nilable: true},
+    description: String
   )
 end
 

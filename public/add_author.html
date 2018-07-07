@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="angular.js"></script>
+  <script src="add_author.js"></script>
+
+  <style>
+    label {
+      display: inline-block;
+      width: 120px;
+      vertical-align: middle;
+    }
+
+    input {
+      border: solid rgb(229, 255, 0) 1px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    input.ng-invalid {
+      border: solid red 2px;
+    }
+
+    textarea {
+      width: 300px;
+      height: 80px;
+    }
+  </style>
+</head>
+
+<body ng-app="mainModule">
+  <div ng-controller="mainController">
+    <h3>Add Author : </h3>
+    <form name="authorForm" novalidate>
+      <label for="validationKey">Validation Key :</label>
+      <input id="validationKey" type="text" name="validationKey" ng-model="author.validationKey" required />
+      <br>
+      <br>
+      <label for="name">Name :</label>
+      <input id="name" type="text" name="name" ng-model="author.name" required />
+      <br>
+      <br>
+      <label for="age">Age :</label>
+      <input id="age" type="number" name="age" ng-model="author.age" required />
+      <br>
+      <br>
+      <label for="nickname">Nickname :</label>
+      <input id="nickname" type="text" name="nickname" ng-model="author.nickname" required />
+      <br>
+      <br>
+      <label for="github">Github Link :</label>
+      <input id="github" type="text" name="github" ng-model="author.github" />
+      <br>
+      <br>
+      <label for="facebook">Facebook Link :</label>
+      <input id="facebook" type="text" name="facebook" ng-model="author.facebook" />
+      <br>
+      <br>
+      <label for="twitter">Twitter Link :</label>
+      <input id="twitter" type="text" name="twitter" ng-model="author.twitter" />
+      <br>
+      <br>
+      <label for="description">Description :</label>
+      <input cols="40" rows="5" id="description" type="text" name="description" ng-model="author.description" required />
+      <br>
+      <br>
+      <button ng-click="SendDataAuthor(author)" ng-disabled="authorForm.$invalid">Submit</button>
+      <br>
+      <br>
+    </form>
+    <br>
+    <br>
+  </div>
+</body>
+
+</html>

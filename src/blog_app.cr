@@ -29,6 +29,20 @@ get "/:post_name" do |env|
   render "public/post.ecr"
 end
 
+post "/addPost" do |env|
+  post = Blog_Posts.from_json env.params.json.to_json
+  # TODO : validate author
+  post.createdOn = Time.now.to_utc.to_s
+  posts_collection.insert(orm_json_posts(post))
+end
+
+post "/addAuthor" do |env|
+  validationKey = env.params.json["validationKey"].as(String)
+  puts "Validation key : " + validationKey + " || payload : " + env.params.json.to_json
+  # TODO:validate author
+  author = Author.from_json env.params.json.to_json
+  author_collection.insert(orm_json_author(author))
+end
 
 Kemal.config.host_binding = "0.0.0.0"
 Kemal.run
